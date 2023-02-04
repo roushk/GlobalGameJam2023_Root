@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/import/UI/DesktopIcons/FolderIcon.png" type="Texture" id=1]
 [ext_resource path="res://assets/import/UI/DesktopIcons/ComputerIcon.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://RootTheme.tres" type="Theme" id=5]
 [ext_resource path="res://assets/import/Mouse.png" type="Texture" id=6]
 [ext_resource path="res://scripts/Mouse.gd" type="Script" id=7]
+[ext_resource path="res://scenes/Terminal.tscn" type="PackedScene" id=9]
 
 [node name="Node" type="Node"]
 pause_mode = 2
@@ -406,3 +407,10 @@ align = 0
 position = Vector2( -10, 7 )
 texture = ExtResource( 6 )
 script = ExtResource( 7 )
+
+[node name="Terminal" parent="." instance=ExtResource( 9 )]
+margin_left = 100.0
+margin_top = 35.0
+margin_right = 82.0
+margin_bottom = 11.0
+rect_scale = Vector2( 0.5, 0.5 )
