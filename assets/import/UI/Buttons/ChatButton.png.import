@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/EmailButton.png-43e1ee1729114742a475e906e91f9915.stex"
+path="res://.import/ChatButton.png-0e77f7be21efa725db3de261f16578ad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/import/EmailButton.png"
-dest_files=[ "res://.import/EmailButton.png-43e1ee1729114742a475e906e91f9915.stex" ]
+source_file="res://assets/import/UI/Buttons/ChatButton.png"
+dest_files=[ "res://.import/ChatButton.png-0e77f7be21efa725db3de261f16578ad.stex" ]
 
 [params]
 

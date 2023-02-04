@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FilesButton-Sheet.png-d544f7b4728709c7ec184a9ae3d123ca.stex"
+path="res://.import/FolderIcon.png-91dcd1d3487626c0e5e2e323aba65fcf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/import/FilesButton-Sheet.png"
-dest_files=[ "res://.import/FilesButton-Sheet.png-d544f7b4728709c7ec184a9ae3d123ca.stex" ]
+source_file="res://assets/import/UI/DesktopIcons/FolderIcon.png"
+dest_files=[ "res://.import/FolderIcon.png-91dcd1d3487626c0e5e2e323aba65fcf.stex" ]
 
 [params]
 

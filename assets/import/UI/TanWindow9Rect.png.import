@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ChatButton.png-af77009d39f869021fc4e1c7467e9825.stex"
+path="res://.import/TanWindow9Rect.png-6945f6d237cf0c6253f83cfb02c9c76b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/import/ChatButton.png"
-dest_files=[ "res://.import/ChatButton.png-af77009d39f869021fc4e1c7467e9825.stex" ]
+source_file="res://assets/import/UI/TanWindow9Rect.png"
+dest_files=[ "res://.import/TanWindow9Rect.png-6945f6d237cf0c6253f83cfb02c9c76b.stex" ]
 
 [params]
 

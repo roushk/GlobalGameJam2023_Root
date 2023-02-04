@@ -24,10 +24,12 @@ window/stretch/aspect="keep"
 [global]
 
 res=false
+font=false
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+theme/custom_font="res://assets/import/Font/RootFont.tres"
 
 [importer_defaults]
 
