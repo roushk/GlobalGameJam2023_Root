@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/import/UI/DesktopIcons/FolderIcon.png" type="Texture" id=1]
 [ext_resource path="res://assets/import/UI/DesktopIcons/ComputerIcon.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://RootTheme.tres" type="Theme" id=5]
 [ext_resource path="res://assets/import/Mouse.png" type="Texture" id=6]
 [ext_resource path="res://scripts/Mouse.gd" type="Script" id=7]
-[ext_resource path="res://assets/import/UI_Test.png" type="Texture" id=8]
 [ext_resource path="res://scenes/Terminal.tscn" type="PackedScene" id=9]
 
 [node name="Node" type="Node"]
@@ -404,9 +403,14 @@ rect_min_size = Vector2( 6, 16 )
 text = "CHATÁ"
 align = 0
 
-[node name="Terminal" parent="Root/DesktopBackground" instance=ExtResource( 9 )]
-
 [node name="Mouse" type="Sprite" parent="."]
 position = Vector2( -10, 7 )
 texture = ExtResource( 6 )
 script = ExtResource( 7 )
+
+[node name="Terminal" parent="." instance=ExtResource( 9 )]
+margin_left = 100.0
+margin_top = 35.0
+margin_right = 82.0
+margin_bottom = 11.0
+rect_scale = Vector2( 0.5, 0.5 )
