@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_Designed_Throw_Seeds_3.wav-4ff7f7801abb449effe6a57dcd82d50d.sample"
+
+[deps]
+
+source_file="res://assets/import/SwishSwoosh - GGJ 2023 Sound Pack/GGJ Theme Specific Audio (ROOTS)/AUDIO/SFX/Designed/SFX_Designed_Throw_Seeds_3.wav"
+dest_files=[ "res://.import/SFX_Designed_Throw_Seeds_3.wav-4ff7f7801abb449effe6a57dcd82d50d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

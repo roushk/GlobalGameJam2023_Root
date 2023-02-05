@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_Combo_Bonus_Mallet_Tier_1.wav-e5f02aa784b8cf53f48344809b67da32.sample"
+
+[deps]
+
+source_file="res://assets/import/SwishSwoosh - GGJ 2023 Sound Pack/General Audio/AUDIO/Combo-Bonus/Mallet/SFX_Combo_Bonus_Mallet_Tier_1.wav"
+dest_files=[ "res://.import/SFX_Combo_Bonus_Mallet_Tier_1.wav-e5f02aa784b8cf53f48344809b67da32.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

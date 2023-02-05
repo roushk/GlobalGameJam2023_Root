@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_Attack_Voice_Male_Swoosh_Swing.wav-5cc65e1981c2fa4f439b6740a5a59f9f.sample"
+
+[deps]
+
+source_file="res://assets/import/SwishSwoosh - GGJ 2023 Sound Pack/General Audio/AUDIO/Attack_Hit_Impact/SFX_Attack_Voice_Male_Swoosh_Swing.wav"
+dest_files=[ "res://.import/SFX_Attack_Voice_Male_Swoosh_Swing.wav-5cc65e1981c2fa4f439b6740a5a59f9f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

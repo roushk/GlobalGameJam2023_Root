@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_Tree_Root_Big_Movement_3.wav-b67c6b9e8b042a6813483b1c26420e17.sample"
+
+[deps]
+
+source_file="res://assets/import/SwishSwoosh - GGJ 2023 Sound Pack/GGJ Theme Specific Audio (ROOTS)/AUDIO/SFX/Nature/Tree_Plant_Leaf/Tree/SFX_Tree_Root_Big_Movement_3.wav"
+dest_files=[ "res://.import/SFX_Tree_Root_Big_Movement_3.wav-b67c6b9e8b042a6813483b1c26420e17.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

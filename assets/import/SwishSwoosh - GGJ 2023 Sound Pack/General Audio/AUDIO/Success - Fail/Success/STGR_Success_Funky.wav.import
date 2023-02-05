@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/STGR_Success_Funky.wav-d9328b58e3a2bf14744bc73dc6fc6045.sample"
+
+[deps]
+
+source_file="res://assets/import/SwishSwoosh - GGJ 2023 Sound Pack/General Audio/AUDIO/Success - Fail/Success/STGR_Success_Funky.wav"
+dest_files=[ "res://.import/STGR_Success_Funky.wav-d9328b58e3a2bf14744bc73dc6fc6045.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

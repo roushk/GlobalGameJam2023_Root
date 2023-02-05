@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_8bit_Jump_03.wav-86ee5335ba290936138f57ca2b8e483a.sample"
+
+[deps]
+
+source_file="res://assets/import/SwishSwoosh - GGJ 2023 Sound Pack/General Audio/AUDIO/Footstep_Jump_Roll/Jump/SFX_8bit_Jump_03.wav"
+dest_files=[ "res://.import/SFX_8bit_Jump_03.wav-86ee5335ba290936138f57ca2b8e483a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

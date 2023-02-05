@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_Gun_Collision_SciFi_Plasma_Rifle_Projectile.wav-2596dfdc30f1788509fccbac77c3f25c.sample"
+
+[deps]
+
+source_file="res://assets/import/SwishSwoosh - GGJ 2023 Sound Pack/General Audio/AUDIO/Gun/SFX_Gun_Collision_SciFi_Plasma_Rifle_Projectile.wav"
+dest_files=[ "res://.import/SFX_Gun_Collision_SciFi_Plasma_Rifle_Projectile.wav-2596dfdc30f1788509fccbac77c3f25c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

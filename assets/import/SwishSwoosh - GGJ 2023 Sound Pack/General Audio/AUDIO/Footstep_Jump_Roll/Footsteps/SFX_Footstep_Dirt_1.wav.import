@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_Footstep_Dirt_1.wav-331be0c94f79d0a2f8ef64f037ea509c.sample"
+
+[deps]
+
+source_file="res://assets/import/SwishSwoosh - GGJ 2023 Sound Pack/General Audio/AUDIO/Footstep_Jump_Roll/Footsteps/SFX_Footstep_Dirt_1.wav"
+dest_files=[ "res://.import/SFX_Footstep_Dirt_1.wav-331be0c94f79d0a2f8ef64f037ea509c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

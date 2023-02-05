@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_Rock_Hit_Small_2.wav-18554f01a416d335c8bbecfd1b966ba7.sample"
+
+[deps]
+
+source_file="res://assets/import/SwishSwoosh - GGJ 2023 Sound Pack/GGJ Theme Specific Audio (ROOTS)/AUDIO/SFX/Rock_Wood_Metal_Food/Hit/SFX_Rock_Hit_Small_2.wav"
+dest_files=[ "res://.import/SFX_Rock_Hit_Small_2.wav-18554f01a416d335c8bbecfd1b966ba7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
