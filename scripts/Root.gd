@@ -13,7 +13,7 @@ var enemy;
 var caesarexe;	#0
 var exploitexe;	#1
 
-var numGames = 5;
+var numGames = 1;
 var numGamesLeft;
 
 var delayStart = 2.0
@@ -25,6 +25,8 @@ var nextGame = -1
 var caesarCipherScript;
 var rng
 
+onready var enemylinesdict = "res://enemydamagedlines.txt"
+var enemylines = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,6 +43,16 @@ func _ready():
 	
 	caesarexe = get_node("EnemyPanel/Games/Caesar")
 	exploitexe = get_node("EnemyPanel/Games/ExploitChain")
+	
+	$"EnemyPanel/Timer".connect("timeout", self, "hide_enemy_text")
+	
+	var f = File.new()
+	f.open(enemylinesdict, File.READ)
+	while not f.eof_reached():
+		var line = f.get_line()
+		enemylines.append(line)
+	
+	f.close()
 
 	numGamesLeft = numGames;
 	set_next_game(0);
@@ -67,6 +79,11 @@ func set_next_game(game):
 	nextGame = game
 	countdownStart = true
 	currDelayStart = 0
+	if numGames != numGamesLeft:
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		show_enemy_text(enemylines[rng.randi_range(0, enemylines.size() - 1)])
+
 	numGamesLeft -= 1;
 	if(numGamesLeft < 0):
 		print("You Win!")
@@ -109,7 +126,11 @@ func _process(delta):
 		set_game(nextGame)
 		countdownStart = false
 
+func show_enemy_text(text):
+	$"EnemyPanel/TextBox".visible = true
+	$"EnemyPanel/TextBox/RichTextLabel".text = text
+	$"EnemyPanel/Timer".start()
 
-
-
+func hide_enemy_text():
+	$"EnemyPanel/TextBox".visible = false
 

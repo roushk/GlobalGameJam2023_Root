@@ -5,6 +5,9 @@ var click2 = preload("res://click2.wav")
 var click3 = preload("res://click3.wav")
 var clickSpace = preload("res://click4.wav")
 
+var correct = preload("res://assets/import/SwishSwoosh - GGJ 2023 Sound Pack/General Audio/AUDIO/UI/Notification-Confirm-Decline/SFX_UI_Confirm_Rich_Chime.wav")
+var wrong = preload("res://assets/import/SwishSwoosh - GGJ 2023 Sound Pack/General Audio/AUDIO/UI/Click-Swipe-Swoosh/Click/SFX_UI_Click_Negative.wav")
+
 var rng = RandomNumberGenerator.new()
 var lastString = ""
 
@@ -25,7 +28,17 @@ func _process_input(input_text):
 	if isCompletable:
 		if input_text == completionString:
 			get_node("/root/RootGame/Root").set_next_game(rng.randi_range(0,1))
+			$"../KeypressSoundEmitter".stream = correct
+			$"../KeypressSoundEmitter".pitch_scale = 0.94
+			$"../KeypressSoundEmitter".volume_db = -12
+			$"../KeypressSoundEmitter".play()
 			print("ya thats right")
+		else:
+			$"../KeypressSoundEmitter".stream = wrong
+			$"../KeypressSoundEmitter".pitch_scale = 0.94
+			$"../KeypressSoundEmitter".volume_db = -12
+			$"../KeypressSoundEmitter".play()
+			
 	
 func _keypress(input_text):
 	var click

@@ -10,6 +10,7 @@ var isDragging = false
 var isMoving = false
 
 var isMouseInside = false
+var wordDict = []
 
 var dragStart = Vector2()
 var dragEnd = Vector2()
@@ -26,13 +27,13 @@ var tileScale = 15
 var rotateSens = 3.5
 
 var cipherIndex = ord('N') - ord('A')
-var isSolved
+
+var isSolved = false
 var cipherString
 var cipherOffset
-var wordDict = []
 
 func _input(event):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT && !isSolved:
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and not isSolved:
 		if event.is_pressed() and isMouseInside:
 			dragStart = event.position
 			dragEnd = event.position
@@ -101,11 +102,11 @@ func _process(_delta):
 		cipherViewString[i] = output
 	
 	get_parent().get_parent().get_parent().get_node("CypherText/ReferenceRect/Sprite/Cipher").text = cipherViewString
-	if 26 - cipherOffset % 26 == cipherIndex && !isSolved:
+	if 26 - cipherOffset % 26 == cipherIndex and not isSolved:
 		get_parent().get_parent().get_parent().get_node("CypherText/ReferenceRect/Sprite").texture = correct
-		var solutionString = "salad -i" + str(cipherOffset) + " -r -qx --fast -word=" + cipherString
-		$"/root/RootGame/Root/Terminal/LineEdit"._set_password(solutionString)
-		$"/root/RootGame/Root/FinalCommand".visible = true
+		var passwordString = "salad -i" + str(cipherOffset) + " -r -qx --fast -word=" + cipherString
+		get_parent().get_parent().get_parent().get_parent().get_parent().get_node("Terminal/LineEdit")._set_password(passwordString)
+		print(passwordString)
 		isSolved = true
 		
 func _reset():
@@ -120,6 +121,7 @@ func _reset():
 func _ready():
 	for i in range(26):
 		var instance = tileScene.instance()
+		
 		tileList.append(instance)
 		posList.append(originPoint - 10 * tileScale * (13 - i))
 		
@@ -145,8 +147,6 @@ func _ready():
 		rng.randomize()
 		cipherString = wordDict[rng.randi_range(0, wordDict.size() - 1)].to_upper()
 		cipherOffset = rng.randi_range(0, 25)
-		while cipherOffset < 15 and cipherOffset > 10:
-			cipherOffset = rng.randi_range(0, 25)
 
 func _on_Area2D_mouse_entered():
 	isMouseInside = true
