@@ -27,7 +27,7 @@ func _process_input(input_text):
 	#parse command
 	if isCompletable:
 		if input_text == completionString:
-			get_node("/root/RootGame/Root").set_next_game(rng.randi_range(0,1))
+			get_node("/root/RootGame/Root").set_next_game()
 			$"../KeypressSoundEmitter".stream = correct
 			$"../KeypressSoundEmitter".pitch_scale = 0.94
 			$"../KeypressSoundEmitter".volume_db = -12

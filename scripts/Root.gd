@@ -21,7 +21,7 @@ var currDelayStart = 0
 var countdownStart = true
 
 var expectedPassword = ""
-var nextGame = -1
+var nextGame = 0
 var caesarCipherScript;
 var rng
 
@@ -56,7 +56,7 @@ func _ready():
 	f.close()
 
 	numGamesLeft = numGames;
-	set_next_game(1);
+	set_next_game();
 	$"FinalCommand".visible = false
 	$"FinalCommand".set_process(false)
 	pass # Replace with function body.
@@ -76,8 +76,12 @@ func reset_games():
 	exploitexe.visible = false;
 	$"FinalCommand".visible = false
 	
-func set_next_game(game):
-	nextGame = game
+func set_next_game():
+	if(nextGame == 1):
+		nextGame = 0;
+	else:
+		nextGame = 1;
+		
 	countdownStart = true
 	currDelayStart = 0
 	if numGames != numGamesLeft:
@@ -95,7 +99,7 @@ func set_next_game(game):
 	
 	reset_games();
 	
-	match game:
+	match nextGame:
 		0:
 			caesarexe.visible = true;
 		1:
@@ -127,6 +131,7 @@ func _process(delta):
 	$"EnemyPanel/GamesLeft/GamesLeftNum".text = str(numGamesLeft)
 	if(countdownStart == true):
 		currDelayStart += delta
+		
 	if(currDelayStart > delayStart && countdownStart == true):
 		set_game(nextGame)
 		countdownStart = false
