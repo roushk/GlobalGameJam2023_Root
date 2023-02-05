@@ -13,7 +13,7 @@ var enemy;
 var caesarexe;	#0
 var exploitexe;	#1
 
-var numGames = 1;
+var numGames = 5;
 var numGamesLeft;
 
 var delayStart = 2.0
@@ -30,6 +30,7 @@ var enemylines = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 		
@@ -86,7 +87,11 @@ func set_next_game(game):
 
 	numGamesLeft -= 1;
 	if(numGamesLeft < 0):
-		print("You Win!")
+		$"AccessGranted".visible = true
+		$"EnemyPanel/Timer".connect("timeout", self, "quit")
+		$"EnemyPanel/Timer".wait_time = 5
+		$"EnemyPanel/Timer".start()
+		return
 	
 	reset_games();
 	
@@ -134,3 +139,5 @@ func show_enemy_text(text):
 func hide_enemy_text():
 	$"EnemyPanel/TextBox".visible = false
 
+func quit():
+	get_tree().quit()

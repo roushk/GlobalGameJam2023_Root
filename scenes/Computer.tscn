@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/import/UI/DesktopIcons/FolderIcon.png" type="Texture" id=1]
 [ext_resource path="res://assets/import/UI/DesktopIcons/ComputerIcon.png" type="Texture" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://scenes/Minigame_ExploitChain.tscn" type="PackedScene" id=12]
 [ext_resource path="res://MUSIC_SouthAmericanJungle_StyrfoamBox_110BPM_Loop_MODIFIED.wav" type="AudioStream" id=13]
 [ext_resource path="res://assets/import/UI/TanButton9Rect_Hovered.png" type="Texture" id=14]
+[ext_resource path="res://scriptie.jpg" type="Texture" id=15]
+[ext_resource path="res://assets/import/UI/TanWindow9Rect.png" type="Texture" id=16]
+[ext_resource path="res://us.jpg" type="Texture" id=17]
 
 [node name="RootGame" type="Node"]
 pause_mode = 2
@@ -127,14 +130,6 @@ rect_scale = Vector2( 0.5, 0.5 )
 text = "memes"
 scroll_active = false
 
-[node name="PlayerHealthUI" type="ProgressBar" parent="Root"]
-anchor_right = 1.0
-margin_left = 1.0
-margin_top = 152.0
-margin_right = -289.0
-margin_bottom = 179.0
-value = 10.0
-
 [node name="Terminal" parent="Root" instance=ExtResource( 9 )]
 margin_left = 35.0
 margin_top = 153.0
@@ -153,11 +148,22 @@ margin_top = 2.0
 margin_right = -21.0
 margin_bottom = -30.0
 
+[node name="Us" type="TextureRect" parent="Root"]
+margin_left = 1.0
+margin_top = 147.0
+margin_right = 33.0
+margin_bottom = 179.0
+rect_pivot_offset = Vector2( -428, 0 )
+mouse_filter = 2
+texture = ExtResource( 17 )
+expand = true
+
 [node name="Rooty" type="TextureRect" parent="Root"]
 margin_left = 297.0
 margin_top = 158.0
 margin_right = 314.0
 margin_bottom = 175.0
+rect_pivot_offset = Vector2( -428, 0 )
 mouse_filter = 2
 texture = ExtResource( 4 )
 expand = true
@@ -201,6 +207,7 @@ scroll_active = false
 [node name="EnemyPanel" type="ReferenceRect" parent="Root"]
 margin_right = 191.0
 margin_bottom = 62.0
+mouse_filter = 2
 
 [node name="Games" type="ReferenceRect" parent="Root/EnemyPanel"]
 margin_left = 6.0
@@ -278,7 +285,7 @@ margin_right = 33.0
 margin_bottom = 32.0
 rect_pivot_offset = Vector2( 151, 92 )
 mouse_filter = 2
-texture = ExtResource( 4 )
+texture = ExtResource( 15 )
 expand = true
 
 [node name="TextBox" type="NinePatchRect" parent="Root/EnemyPanel"]
@@ -304,6 +311,44 @@ scroll_active = false
 [node name="Timer" type="Timer" parent="Root/EnemyPanel"]
 wait_time = 3.0
 one_shot = true
+
+[node name="AccessGranted" type="ReferenceRect" parent="Root"]
+visible = false
+margin_left = 75.0
+margin_top = 36.0
+margin_right = 250.0
+margin_bottom = 115.0
+mouse_filter = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Root/AccessGranted"]
+margin_top = 18.0
+margin_right = 174.0
+margin_bottom = 64.0
+texture = ExtResource( 16 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Root/AccessGranted/NinePatchRect"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 172.0
+margin_bottom = 77.0
+rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 5 )
+custom_colors/default_color = Color( 0, 0.490196, 0.0117647, 1 )
+text = "ACCESS GRANTED"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Root/AccessGranted/NinePatchRect"]
+margin_left = 15.0
+margin_top = 27.0
+margin_right = 173.0
+margin_bottom = 39.0
+theme = ExtResource( 5 )
+custom_colors/default_color = Color( 0, 0.490196, 0.0117647, 1 )
+text = "SELF DESTRUCT IN 5 SECONDS"
+scroll_active = false
 
 [node name="Mouse" type="Sprite" parent="."]
 position = Vector2( -10, 7 )

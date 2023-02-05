@@ -114,6 +114,8 @@ func _reset():
 	rng.randomize()
 	cipherString = wordDict[rng.randi_range(0, wordDict.size() - 1)].to_upper()
 	cipherOffset = rng.randi_range(0, 25)
+	while cipherOffset < 15 and cipherOffset > 10:
+		cipherOffset = rng.randi_range(0, 25)
 	get_parent().get_parent().get_parent().get_node("CypherText/ReferenceRect/Sprite").texture = fill
 	isSolved = false
 	
@@ -147,6 +149,8 @@ func _ready():
 		rng.randomize()
 		cipherString = wordDict[rng.randi_range(0, wordDict.size() - 1)].to_upper()
 		cipherOffset = rng.randi_range(0, 25)
+		while cipherOffset < 15 and cipherOffset > 10:
+			cipherOffset = rng.randi_range(0, 25)
 
 func _on_Area2D_mouse_entered():
 	isMouseInside = true
