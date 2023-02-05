@@ -43,7 +43,7 @@ func _ready():
 	exploitexe = get_node("EnemyPanel/Games/ExploitChain")
 
 	numGamesLeft = numGames;
-	set_next_game(0);
+	set_next_game(1);
 	$"FinalCommand".visible = false
 	$"FinalCommand".set_process(false)
 	pass # Replace with function body.

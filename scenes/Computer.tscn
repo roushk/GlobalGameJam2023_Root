@@ -263,7 +263,7 @@ expand = true
 
 [node name="FinalCommand" type="NinePatchRect" parent="Root"]
 margin_left = 64.0
-margin_top = 105.0
+margin_top = 82.0
 margin_right = 286.0
 margin_bottom = 140.0
 texture = ExtResource( 14 )
@@ -289,7 +289,7 @@ anchor_right = 1.0
 margin_left = 4.0
 margin_top = 18.0
 margin_right = -4.0
-margin_bottom = 31.0
+margin_bottom = 52.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_min_size = Vector2( 8, 8 )
