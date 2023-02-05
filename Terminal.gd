@@ -8,6 +8,9 @@ var clickSpace = preload("res://click4.wav")
 var rng = RandomNumberGenerator.new()
 var lastString = ""
 
+var isCompletable = false
+var completionString = ""
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	connect("text_entered", self, "_process_input")
@@ -19,6 +22,9 @@ func _process_input(input_text):
 	text = ""
 	
 	#parse command
+	if isCompletable:
+		if input_text == completionString:
+			print("ya thats right")
 	
 func _keypress(input_text):
 	var click
@@ -49,7 +55,11 @@ func _keypress(input_text):
 	$"../KeypressSoundEmitter".play()
 	
 	lastString = input_text
-	
+
+func _set_password(line):
+	isCompletable = true
+	completionString = line
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
