@@ -6,6 +6,7 @@ var click3 = preload("res://click3.wav")
 var clickSpace = preload("res://click4.wav")
 
 var rng = RandomNumberGenerator.new()
+var lastString = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,7 +22,17 @@ func _process_input(input_text):
 	
 func _keypress(input_text):
 	var click
-	if input_text.length() > 1 && input_text[input_text.length() - 1] != " " :
+	var spaceCountNew = 0
+	var spaceCountOld = 0
+	for c in input_text:
+		if c == ' ':
+			spaceCountNew += 1
+			
+	for c in lastString:
+		if c == ' ':
+			spaceCountOld += 1
+	
+	if input_text.length() > 0 && spaceCountNew == spaceCountOld:
 		rng.randomize()
 		match rng.randi_range(0, 2):
 			0:
@@ -36,6 +47,8 @@ func _keypress(input_text):
 	$"../KeypressSoundEmitter".pitch_scale = 0.94
 	$"../KeypressSoundEmitter".volume_db = -12
 	$"../KeypressSoundEmitter".play()
+	
+	lastString = input_text
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
