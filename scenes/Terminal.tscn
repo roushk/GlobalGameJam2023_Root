@@ -12,7 +12,6 @@ theme = ExtResource( 4 )
 [node name="LineEdit" type="LineEdit" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "test"
 context_menu_enabled = false
 caret_blink = true
 script = ExtResource( 1 )

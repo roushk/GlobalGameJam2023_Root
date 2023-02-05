@@ -24,6 +24,7 @@ func _process_input(input_text):
 	#parse command
 	if isCompletable:
 		if input_text == completionString:
+			get_node("/root/RootGame/Root").set_next_game(rng.randi_range(0,1))
 			print("ya thats right")
 	
 func _keypress(input_text):
@@ -59,6 +60,7 @@ func _keypress(input_text):
 func _set_password(line):
 	isCompletable = true
 	completionString = line
+	$"../../FinalCommand/Command".text = completionString
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
