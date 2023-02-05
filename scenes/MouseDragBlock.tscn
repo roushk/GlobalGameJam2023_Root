@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/import/Icons/Icon_Sigma.png" type="Texture" id=1]
+[ext_resource path="res://scripts/MouseDragBlock.gd" type="Script" id=2]
+[ext_resource path="res://assets/import/TileBG.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.5, 7.5 )
+
+[node name="MouseDragBlock" type="Area2D"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+pause_mode = 2
+shape = SubResource( 1 )
+
+[node name="BGSprite" type="Sprite" parent="."]
+pause_mode = 2
+position = Vector2( -0.5, -0.5 )
+texture = ExtResource( 3 )
+offset = Vector2( 0.5, 0.5 )
+
+[node name="TypeSprite" type="Sprite" parent="."]
+pause_mode = 2
+position = Vector2( -0.5, -0.5 )
+texture = ExtResource( 1 )
+offset = Vector2( 0.5, 0.5 )
+
+[connection signal="area_entered" from="." to="." method="_on_MouseDragBlock_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_MouseDragBlock_area_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_MouseDragBlock_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_MouseDragBlock_mouse_exited"]

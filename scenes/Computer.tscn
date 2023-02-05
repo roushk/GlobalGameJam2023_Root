@@ -11,6 +11,7 @@
 [ext_resource path="res://scenes/Terminal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Minigame.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Caesar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Minigame_ExploitChain.tscn" type="PackedScene" id=12]
 
 [node name="Node" type="Node"]
 pause_mode = 2
@@ -37,6 +38,7 @@ __meta__ = {
 }
 
 [node name="Background" type="RichTextLabel" parent="Root"]
+pause_mode = 2
 modulate = Color( 1, 1, 1, 0.196078 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -49,6 +51,9 @@ mouse_filter = 2
 meta_underlined = false
 text = "ROOT:/"
 scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="DesktopBackground" type="TextureRect" parent="Root"]
 pause_mode = 2
@@ -62,8 +67,9 @@ __meta__ = {
 [node name="EnemyPanel" type="NinePatchRect" parent="Root"]
 anchor_right = 0.7
 anchor_bottom = 0.4
+margin_top = -1.0
 margin_right = -32.0
-margin_bottom = -8.0
+margin_bottom = -9.0
 texture = ExtResource( 8 )
 patch_margin_left = 4
 patch_margin_top = 4
@@ -76,6 +82,7 @@ margin_left = 4.0
 margin_top = 34.0
 margin_right = -159.0
 margin_bottom = 51.0
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="Root/EnemyPanel"]
 margin_left = 4.0
@@ -83,6 +90,7 @@ margin_top = 4.0
 margin_right = 33.0
 margin_bottom = 33.0
 rect_pivot_offset = Vector2( 151, 92 )
+mouse_filter = 2
 texture = ExtResource( 4 )
 expand = true
 
@@ -91,6 +99,7 @@ margin_left = 37.0
 margin_top = 3.0
 margin_right = 135.0
 margin_bottom = 50.0
+mouse_filter = 2
 text = "I am sending over the PAYLOAD... uhh"
 
 [node name="PlayerHealthUI" type="ProgressBar" parent="Root"]
@@ -201,11 +210,11 @@ margin_top = 153.0
 margin_right = -3.0
 margin_bottom = -1.0
 
-[node name="MiniGame" parent="." instance=ExtResource( 10 )]
-margin_left = 34.0
+[node name="MiniGame2" parent="." instance=ExtResource( 10 )]
+margin_left = 36.0
 margin_top = 2.0
-margin_right = -2.0
-margin_bottom = -29.0
+margin_right = -34.0
+margin_bottom = -30.0
 
 [node name="MiniGame2" parent="." instance=ExtResource( 11 )]
 margin_left = 49.0

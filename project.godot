@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "CaesarTile",
 "language": "GDScript",
 "path": "res://scenes/CaesarTile.gd"
+}, {
+"base": "Area2D",
+"class": "DragDropLocation",
+"language": "GDScript",
+"path": "res://scripts/DragDropLocation.gd"
+}, {
+"base": "Node",
+"class": "MouseGrabbing",
+"language": "GDScript",
+"path": "res://scripts/Autoload_MouseGrabbing.gd"
 } ]
 _global_script_class_icons={
-"CaesarTile": ""
+"CaesarTile": "",
+"DragDropLocation": "",
+"MouseGrabbing": ""
 }
 
 [application]
@@ -23,6 +35,10 @@ _global_script_class_icons={
 config/name="Root"
 run/main_scene="res://scenes/Computer.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+AutoloadMouseGrabbing="*res://scenes/Autoload_MouseGrabbing.tscn"
 
 [display]
 
