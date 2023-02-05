@@ -201,6 +201,7 @@ scroll_active = false
 [node name="EnemyPanel" type="ReferenceRect" parent="Root"]
 margin_right = 191.0
 margin_bottom = 62.0
+mouse_filter = 2
 
 [node name="Games" type="ReferenceRect" parent="Root/EnemyPanel"]
 margin_left = 6.0
