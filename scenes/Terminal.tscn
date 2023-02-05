@@ -15,7 +15,6 @@ anchor_bottom = 1.0
 text = "test"
 context_menu_enabled = false
 caret_blink = true
-caret_blink_speed = 0.5
 script = ExtResource( 1 )
 
 [node name="KeypressSoundEmitter" type="AudioStreamPlayer" parent="."]
