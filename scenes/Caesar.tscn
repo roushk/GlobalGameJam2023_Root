@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/Minigame.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/import/UI/TanWindow9Rect.png" type="Texture" id=2]
 [ext_resource path="res://fill.png" type="Texture" id=3]
-[ext_resource path="res://scripts/RouletteWindow.gd" type="Script" id=4]
+[ext_resource path="res://scripts/Minigame_CaesarTile.gd" type="Script" id=4]
 [ext_resource path="res://RootTheme.tres" type="Theme" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]

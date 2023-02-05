@@ -102,13 +102,14 @@ func _process(_delta):
 	get_parent().get_parent().get_parent().get_node("CypherText/ReferenceRect/Sprite/Cipher").text = cipherViewString
 	if 26 - cipherOffset % 26 == cipherIndex:
 		get_parent().get_parent().get_parent().get_node("CypherText/ReferenceRect/Sprite").texture = correct
+		var solutionString = "salad -i" + str(cipherOffset) + " -r -qx --fast -word=" + cipherString
+		get_node("/root/RootGame/Root/Terminal/LineEdit")._set_password(solutionString)
 		
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(26):
 		var instance = tileScene.instance()
-		
 		tileList.append(instance)
 		posList.append(originPoint - 10 * tileScale * (13 - i))
 		

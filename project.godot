@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "RichTextLabel",
 "class": "CaesarTile",
 "language": "GDScript",
-"path": "res://scenes/CaesarTile.gd"
+"path": "res://scripts/CaesarTile.gd"
 }, {
 "base": "Area2D",
 "class": "DragDropLocation",
