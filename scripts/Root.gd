@@ -21,7 +21,7 @@ var currDelayStart = 0
 var countdownStart = true
 
 var expectedPassword = ""
-var nextGame = 0
+var nextGame = 1
 var caesarCipherScript;
 var rng
 

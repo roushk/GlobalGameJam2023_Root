@@ -101,7 +101,7 @@ func _process(_delta):
 		cipherViewString[i] = output
 	
 	get_parent().get_parent().get_parent().get_node("CypherText/ReferenceRect/Sprite/Cipher").text = cipherViewString
-	if 26 - cipherOffset % 26 == cipherIndex && !isSolved:
+	if (26 - cipherOffset) % 26 == cipherIndex && !isSolved:
 		get_parent().get_parent().get_parent().get_node("CypherText/ReferenceRect/Sprite").texture = correct
 		var solutionString = "salad -i" + str(cipherOffset) + " -r -qx --fast -word=" + cipherString
 		$"/root/RootGame/Root/Terminal/LineEdit"._set_password(solutionString)
@@ -113,6 +113,8 @@ func _reset():
 	rng.randomize()
 	cipherString = wordDict[rng.randi_range(0, wordDict.size() - 1)].to_upper()
 	cipherOffset = rng.randi_range(0, 25)
+	while cipherOffset < 15 and cipherOffset > 10:
+		cipherOffset = rng.randi_range(0, 25)
 	get_parent().get_parent().get_parent().get_node("CypherText/ReferenceRect/Sprite").texture = fill
 	isSolved = false
 	
