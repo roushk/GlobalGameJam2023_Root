@@ -26,12 +26,13 @@ var tileScale = 15
 var rotateSens = 3.5
 
 var cipherIndex = ord('N') - ord('A')
-
+var isSolved
 var cipherString
 var cipherOffset
+var wordDict = []
 
 func _input(event):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT && !isSolved:
 		if event.is_pressed() and isMouseInside:
 			dragStart = event.position
 			dragEnd = event.position
@@ -100,15 +101,27 @@ func _process(_delta):
 		cipherViewString[i] = output
 	
 	get_parent().get_parent().get_parent().get_node("CypherText/ReferenceRect/Sprite/Cipher").text = cipherViewString
-	if 26 - cipherOffset % 26 == cipherIndex:
+	if (26 - cipherOffset) % 26 == cipherIndex && !isSolved:
 		get_parent().get_parent().get_parent().get_node("CypherText/ReferenceRect/Sprite").texture = correct
+		var solutionString = "salad -i" + str(cipherOffset) + " -r -qx --fast -word=" + cipherString
+		$"/root/RootGame/Root/Terminal/LineEdit"._set_password(solutionString)
+		$"/root/RootGame/Root/FinalCommand".visible = true
+		isSolved = true
 		
+func _reset():
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	cipherString = wordDict[rng.randi_range(0, wordDict.size() - 1)].to_upper()
+	cipherOffset = rng.randi_range(0, 25)
+	while cipherOffset < 15 and cipherOffset > 10:
+		cipherOffset = rng.randi_range(0, 25)
+	get_parent().get_parent().get_parent().get_node("CypherText/ReferenceRect/Sprite").texture = fill
+	isSolved = false
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(26):
 		var instance = tileScene.instance()
-		
 		tileList.append(instance)
 		posList.append(originPoint - 10 * tileScale * (13 - i))
 		
@@ -122,7 +135,6 @@ func _ready():
 		instance.rect_position.y = originPoint - 10 * tileScale * (13 - i)
 	
 	var f = File.new()
-	var wordDict = []
 	f.open(dict, File.READ)
 	while not f.eof_reached():
 		var line = f.get_line()
@@ -135,6 +147,8 @@ func _ready():
 		rng.randomize()
 		cipherString = wordDict[rng.randi_range(0, wordDict.size() - 1)].to_upper()
 		cipherOffset = rng.randi_range(0, 25)
+		while cipherOffset < 15 and cipherOffset > 10:
+			cipherOffset = rng.randi_range(0, 25)
 
 func _on_Area2D_mouse_entered():
 	isMouseInside = true

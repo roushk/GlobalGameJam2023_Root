@@ -9,13 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "RichTextLabel",
+"base": "Reference",
 "class": "CaesarTile",
 "language": "GDScript",
-"path": "res://scenes/CaesarTile.gd"
+"path": "res://scripts/CaesarTile.gd"
+}, {
+"base": "Area2D",
+"class": "DragDropLocation",
+"language": "GDScript",
+"path": "res://scripts/DragDropLocation.gd"
+}, {
+"base": "Node",
+"class": "MouseGrabbing",
+"language": "GDScript",
+"path": "res://scripts/Autoload_MouseGrabbing.gd"
 } ]
 _global_script_class_icons={
-"CaesarTile": ""
+"CaesarTile": "",
+"DragDropLocation": "",
+"MouseGrabbing": ""
 }
 
 [application]
@@ -24,10 +36,16 @@ config/name="Root"
 run/main_scene="res://scenes/Computer.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+AutoloadMouseGrabbing="*res://scenes/Autoload_MouseGrabbing.tscn"
+
 [display]
 
 window/size/width=320
 window/size/height=180
+window/size/test_width=1920
+window/size/test_height=1080
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

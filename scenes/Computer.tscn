@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/import/UI/DesktopIcons/FolderIcon.png" type="Texture" id=1]
 [ext_resource path="res://assets/import/UI/DesktopIcons/ComputerIcon.png" type="Texture" id=2]
@@ -7,12 +7,18 @@
 [ext_resource path="res://RootTheme.tres" type="Theme" id=5]
 [ext_resource path="res://assets/import/Mouse.png" type="Texture" id=6]
 [ext_resource path="res://scripts/Mouse.gd" type="Script" id=7]
-[ext_resource path="res://assets/import/UI/TanButton9Rect_Disabled.png" type="Texture" id=8]
+[ext_resource path="res://assets/import/UI/TanButton9Rect.png" type="Texture" id=8]
 [ext_resource path="res://scenes/Terminal.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/Minigame.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scripts/Root.gd" type="Script" id=10]
 [ext_resource path="res://scenes/Caesar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Minigame_ExploitChain.tscn" type="PackedScene" id=12]
+[ext_resource path="res://MUSIC_SouthAmericanJungle_StyrfoamBox_110BPM_Loop_MODIFIED.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/import/UI/TanButton9Rect_Hovered.png" type="Texture" id=14]
+[ext_resource path="res://scriptie.jpg" type="Texture" id=15]
+[ext_resource path="res://assets/import/UI/TanWindow9Rect.png" type="Texture" id=16]
+[ext_resource path="res://us.jpg" type="Texture" id=17]
 
-[node name="Node" type="Node"]
+[node name="RootGame" type="Node"]
 pause_mode = 2
 
 [node name="SpecialChars" type="Button" parent="."]
@@ -32,11 +38,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 theme = ExtResource( 5 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Background" type="RichTextLabel" parent="Root"]
+pause_mode = 2
 modulate = Color( 1, 1, 1, 0.196078 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -49,6 +57,9 @@ mouse_filter = 2
 meta_underlined = false
 text = "ROOT:/"
 scroll_active = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="DesktopBackground" type="TextureRect" parent="Root"]
 pause_mode = 2
@@ -59,80 +70,36 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="EnemyPanel" type="NinePatchRect" parent="Root"]
-anchor_right = 0.7
-anchor_bottom = 0.4
-margin_right = -32.0
-margin_bottom = -8.0
-texture = ExtResource( 8 )
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
-
-[node name="EnemyHealthUI" type="ProgressBar" parent="Root/EnemyPanel"]
-anchor_right = 1.0
-margin_left = 4.0
-margin_top = 34.0
-margin_right = -159.0
-margin_bottom = 51.0
-
-[node name="TextureRect" type="TextureRect" parent="Root/EnemyPanel"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 33.0
-margin_bottom = 33.0
-rect_pivot_offset = Vector2( 151, 92 )
-texture = ExtResource( 4 )
-expand = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Root/EnemyPanel"]
-margin_left = 37.0
-margin_top = 3.0
-margin_right = 135.0
-margin_bottom = 50.0
-text = "I am sending over the PAYLOAD... uhh"
-
-[node name="PlayerHealthUI" type="ProgressBar" parent="Root"]
-anchor_right = 1.0
-margin_left = 1.0
-margin_top = 152.0
-margin_right = -289.0
-margin_bottom = 179.0
-value = 10.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Root"]
-margin_left = 7.0
-margin_top = 35.0
-margin_right = 23.0
-margin_bottom = 122.0
-alignment = 2
-
-[node name="MyComputer" type="TextureButton" parent="Root/VBoxContainer"]
-margin_right = 16.0
-margin_bottom = 20.0
+[node name="MyComputer" type="TextureButton" parent="Root"]
+margin_left = 302.0
+margin_top = 2.0
+margin_right = 318.0
+margin_bottom = 22.0
 rect_min_size = Vector2( 0, 20 )
 texture_normal = ExtResource( 2 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Root/VBoxContainer/MyComputer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Root/MyComputer"]
+self_modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
-margin_top = 13.0
+margin_top = 14.0
 margin_right = 17.0
-margin_bottom = 9.0
+margin_bottom = 10.0
 rect_scale = Vector2( 0.5, 0.5 )
 text = "my cmp"
 scroll_active = false
 
-[node name="root" type="TextureButton" parent="Root/VBoxContainer"]
-margin_top = 19.0
-margin_right = 16.0
-margin_bottom = 39.0
+[node name="root" type="TextureButton" parent="Root"]
+margin_left = 302.0
+margin_top = 21.0
+margin_right = 318.0
+margin_bottom = 41.0
 rect_min_size = Vector2( 0, 20 )
 texture_normal = ExtResource( 1 )
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Root/VBoxContainer/root"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Root/root"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 3.0
@@ -143,86 +110,253 @@ rect_scale = Vector2( 0.5, 0.5 )
 text = "root"
 scroll_active = false
 
-[node name="memes" type="TextureButton" parent="Root/VBoxContainer"]
-margin_top = 38.0
-margin_right = 16.0
-margin_bottom = 58.0
+[node name="memes" type="TextureButton" parent="Root"]
+margin_left = 302.0
+margin_top = 40.0
+margin_right = 318.0
+margin_bottom = 60.0
 rect_min_size = Vector2( 0, 20 )
 texture_normal = ExtResource( 1 )
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Root/VBoxContainer/memes"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Root/memes"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.5
-margin_top = 14.0
-margin_right = 16.5
-margin_bottom = 10.0
+margin_left = 1.0
+margin_top = 13.0
+margin_right = 17.0
+margin_bottom = 9.0
 rect_scale = Vector2( 0.5, 0.5 )
 text = "memes"
 scroll_active = false
 
-[node name="hackexe" type="TextureButton" parent="Root/VBoxContainer"]
-margin_top = 57.0
-margin_right = 16.0
-margin_bottom = 77.0
-rect_min_size = Vector2( 0, 20 )
-texture_normal = ExtResource( 3 )
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="Root/VBoxContainer/hackexe"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 14.0
-margin_right = 20.0
-margin_bottom = 10.0
-rect_scale = Vector2( 0.5, 0.5 )
-text = "hack.exe"
-scroll_active = false
-
-[node name="hackexe2" type="TextureButton" parent="Root/VBoxContainer"]
-margin_top = 76.0
-margin_right = 16.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 0, 20 )
-texture_normal = ExtResource( 3 )
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="Root/VBoxContainer/hackexe2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 14.0
-margin_right = 20.0
-margin_bottom = 10.0
-rect_scale = Vector2( 0.5, 0.5 )
-text = "hack.exe"
-scroll_active = false
-
-[node name="Terminal" parent="." instance=ExtResource( 9 )]
+[node name="Terminal" parent="Root" instance=ExtResource( 9 )]
 margin_left = 35.0
 margin_top = 153.0
 margin_right = -3.0
 margin_bottom = -1.0
 
-[node name="MiniGame" parent="." instance=ExtResource( 10 )]
-margin_left = 34.0
-margin_top = 2.0
-margin_right = -2.0
-margin_bottom = -29.0
-
-[node name="MiniGame2" parent="." instance=ExtResource( 11 )]
+[node name="ExploitChain" parent="Root" instance=ExtResource( 12 )]
 margin_left = 49.0
 margin_top = 2.0
 margin_right = -21.0
 margin_bottom = -30.0
 
-[node name="Rooty" type="TextureRect" parent="."]
+[node name="CaesarCipher" parent="Root" instance=ExtResource( 11 )]
+margin_left = 49.0
+margin_top = 2.0
+margin_right = -21.0
+margin_bottom = -30.0
+
+[node name="Us" type="TextureRect" parent="Root"]
+margin_left = 1.0
+margin_top = 147.0
+margin_right = 33.0
+margin_bottom = 179.0
+rect_pivot_offset = Vector2( -428, 0 )
+mouse_filter = 2
+texture = ExtResource( 17 )
+expand = true
+
+[node name="Rooty" type="TextureRect" parent="Root"]
 margin_left = 297.0
 margin_top = 158.0
 margin_right = 314.0
 margin_bottom = 175.0
+rect_pivot_offset = Vector2( -428, 0 )
 mouse_filter = 2
 texture = ExtResource( 4 )
 expand = true
+
+[node name="FinalCommand" type="NinePatchRect" parent="Root"]
+margin_left = 64.0
+margin_top = 82.0
+margin_right = 286.0
+margin_bottom = 140.0
+texture = ExtResource( 14 )
+region_rect = Rect2( 1, 0, 6, 7 )
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="GamesLeftNum2" type="RichTextLabel" parent="Root/FinalCommand"]
+anchor_right = 1.0
+margin_left = 14.0
+margin_top = 3.0
+margin_right = -13.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 8, 8 )
+mouse_filter = 2
+text = "Type this command in console below! ~ Rooty"
+scroll_active = false
+
+[node name="Command" type="RichTextLabel" parent="Root/FinalCommand"]
+anchor_right = 1.0
+margin_left = 4.0
+margin_top = 18.0
+margin_right = -4.0
+margin_bottom = 52.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 8, 8 )
+mouse_filter = 2
+text = "awdawdawg hwadawdawdawdawdawd"
+scroll_active = false
+
+[node name="EnemyPanel" type="ReferenceRect" parent="Root"]
+margin_right = 191.0
+margin_bottom = 62.0
+mouse_filter = 2
+
+[node name="Games" type="ReferenceRect" parent="Root/EnemyPanel"]
+margin_left = 6.0
+margin_top = 52.0
+margin_right = 34.0
+margin_bottom = 76.0
+rect_clip_content = true
+
+[node name="Caesar" type="TextureButton" parent="Root/EnemyPanel/Games"]
+margin_left = 5.0
+margin_top = 1.0
+margin_right = 21.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 0, 20 )
+texture_normal = ExtResource( 3 )
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Root/EnemyPanel/Games/Caesar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -3.0
+margin_top = 14.0
+margin_right = 33.0
+margin_bottom = 6.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "caesar.exe"
+scroll_active = false
+
+[node name="ExploitChain" type="TextureButton" parent="Root/EnemyPanel/Games"]
+margin_left = 5.0
+margin_top = 1.0
+margin_right = 21.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 0, 20 )
+texture_normal = ExtResource( 3 )
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Root/EnemyPanel/Games/ExploitChain"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = 14.0
+margin_right = 26.0
+margin_bottom = 4.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "exploit.exe"
+scroll_active = false
+
+[node name="GamesLeft" type="NinePatchRect" parent="Root/EnemyPanel"]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 29.0
+margin_bottom = 52.0
+texture = ExtResource( 14 )
+region_rect = Rect2( 1, 0, 6, 7 )
+patch_margin_left = 3
+patch_margin_top = 4
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="GamesLeftNum" type="RichTextLabel" parent="Root/EnemyPanel/GamesLeft"]
+anchor_right = 1.0
+margin_left = 6.0
+margin_top = 2.0
+margin_right = -7.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 8, 8 )
+rect_scale = Vector2( 1.8, 1.8 )
+mouse_filter = 2
+text = "1"
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="Root/EnemyPanel"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 33.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 151, 92 )
+mouse_filter = 2
+texture = ExtResource( 15 )
+expand = true
+
+[node name="TextBox" type="NinePatchRect" parent="Root/EnemyPanel"]
+visible = false
+margin_left = 35.0
+margin_right = 294.0
+margin_bottom = 36.0
+texture = ExtResource( 8 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Root/EnemyPanel/TextBox"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 252.0
+margin_bottom = 30.0
+mouse_filter = 2
+text = "I am sending over the PAYLOAD... uhh"
+scroll_active = false
+
+[node name="Timer" type="Timer" parent="Root/EnemyPanel"]
+wait_time = 3.0
+one_shot = true
+
+[node name="AccessGranted" type="ReferenceRect" parent="Root"]
+visible = false
+margin_left = 75.0
+margin_top = 36.0
+margin_right = 250.0
+margin_bottom = 115.0
+mouse_filter = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Root/AccessGranted"]
+margin_top = 18.0
+margin_right = 174.0
+margin_bottom = 64.0
+texture = ExtResource( 16 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Root/AccessGranted/NinePatchRect"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 172.0
+margin_bottom = 77.0
+rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 5 )
+custom_colors/default_color = Color( 0, 0.490196, 0.0117647, 1 )
+text = "ACCESS GRANTED"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Root/AccessGranted/NinePatchRect"]
+margin_left = 15.0
+margin_top = 27.0
+margin_right = 173.0
+margin_bottom = 39.0
+theme = ExtResource( 5 )
+custom_colors/default_color = Color( 0, 0.490196, 0.0117647, 1 )
+text = "SELF DESTRUCT IN 5 SECONDS"
+scroll_active = false
 
 [node name="Mouse" type="Sprite" parent="."]
 position = Vector2( -10, 7 )
 texture = ExtResource( 6 )
 script = ExtResource( 7 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -28.0
+pitch_scale = 0.95
+autoplay = true
